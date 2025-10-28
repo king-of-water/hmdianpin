@@ -46,6 +46,6 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
         //5.存在，写入redis，返回商铺信息
         stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(shop));
 
-        return null;
+        return Result.ok(shop);
     }
 }
